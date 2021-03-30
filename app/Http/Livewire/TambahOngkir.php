@@ -6,6 +6,7 @@ use App\Models\Produk;
 use Livewire\Component;
 use Kavist\RajaOngkir\RajaOngkir;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 class TambahOngkir extends Component
 {
@@ -20,7 +21,7 @@ class TambahOngkir extends Component
         $this->belanja = Belanja::find($id);
     }
 
-    public function getOngkir()
+    public function getOngkir(Request $produk_id)
     {
         //validasi
         if (!$this->provinsi_id || !$this->kota_id || !$this->jasa) {
